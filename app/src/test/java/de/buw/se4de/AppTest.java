@@ -27,7 +27,7 @@ public class AppTest {
 	login login;
 	home home;
 	NewBook nb;
-	NewSudent ns;
+	NewStudent ns;
 	ActionEvent evt;
 		
 
@@ -36,7 +36,7 @@ public class AppTest {
 	  void setup() { 
 		  login = new login();
 		  nb = new NewBook(); 
-		  ns = new NewSudent();
+		  ns = new NewStudent();
 		  home = new home();
 	  }
 	  

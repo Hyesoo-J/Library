@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 /**
  * @author nikhi
  */
-public class NewSudent extends javax.swing.JFrame {
+public class NewStudent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public JButton saveBtn;
@@ -28,9 +28,9 @@ public class NewSudent extends javax.swing.JFrame {
     public JTextField familynameTextBox;
 
     /**
-     * Creates new form newSudent
+     * Creates new form NewStudent
      */
-    public NewSudent() {
+    public NewStudent() {
         initComponents();
     }
 
@@ -51,20 +51,20 @@ public class NewSudent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewSudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewSudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewSudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewSudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewSudent().setVisible(true);
+                new NewStudent().setVisible(true);
             }
         });
     }
@@ -132,16 +132,23 @@ public class NewSudent extends javax.swing.JFrame {
         this.getRootPane().setDefaultButton(saveBtn);
 
     }// </editor-fold>//GEN-END:initComponents
+    
+    
 
     public void closeBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);        // TODO add your handling code here:
+       
     }
     //GEN-LAST:event_jButton2ActionPerformed
     // End of variables declaration//GEN-END:variables
 
     public void saveBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        studentIDTextBox.setText("");
-        nameTextBox.setText("");
-        familynameTextBox.setText("");
+    	 DBConnectionStudent.setStudent(studentIDTextBox.getText(),  nameTextBox.getText(), familynameTextBox.getText(),  facultyComboBox.getSelectedItem().toString(), choicesComboBox.getSelectedItem().toString());
+         DBConnectionStudent. writeStudentsInDB();
+
+         studentIDTextBox.setText("");
+         nameTextBox.setText("");
+         familynameTextBox.setText("");
+         JOptionPane.showMessageDialog(null, "Succesfully added");
     }
 }

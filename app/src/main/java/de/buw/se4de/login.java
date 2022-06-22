@@ -115,6 +115,7 @@ public class login extends javax.swing.JFrame {
         this.setTitle("Login Page");
 
         DBConnection.readBooksDB();
+        DBConnectionStudent.readStudentsDB();
     }// </editor-fold>//GEN-END:initComponents
 
     public void loginBtnActionPerformed(ActionEvent evt) {

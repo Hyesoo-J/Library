@@ -148,7 +148,7 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     public void newStudentBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new NewSudent().setVisible(true);        // TODO add your handling code here:
+        new NewStudent().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void newBookBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

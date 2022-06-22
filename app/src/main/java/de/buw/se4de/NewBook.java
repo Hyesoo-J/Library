@@ -144,6 +144,7 @@ public class NewBook extends javax.swing.JFrame {
         authorTextField.setText("");
         priceTextField.setText("");
         publishingYearTextField.setText("");
+        JOptionPane.showMessageDialog(null, "Succesfully new book added");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void closeBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

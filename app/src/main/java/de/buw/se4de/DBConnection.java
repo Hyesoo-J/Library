@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class DBConnection {
 
 
-    public static List<List<String>> booksDBList = new ArrayList<List<String>>();
+	public static List<List<String>> booksDBList = new ArrayList<List<String>>();
     public static String[][] booksDB;
 
     protected static String path = Paths.get("src/main/resources/booksDB.csv").getParent() + "\\" + "booksDB.csv";
@@ -70,8 +70,7 @@ public class DBConnection {
     public static int getIndex(String bookID){
         int index = -1;
 
-        for (int i =1; i < booksDB.length;i++){
-
+        for (int i = 0 ; i < booksDB.length;i++){
             if (booksDB[i][0].toLowerCase().equals(bookID.toLowerCase())) return i;
         }
 
@@ -118,4 +117,5 @@ public class DBConnection {
         }
 
     }
+
 }
