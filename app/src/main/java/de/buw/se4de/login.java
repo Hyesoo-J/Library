@@ -260,3 +260,4 @@ public class login extends javax.swing.JFrame {
 	}// GEN-LAST:event_jButton2ActionPerformed
 		// End of variables declaration//GEN-END:variables
 }
+
