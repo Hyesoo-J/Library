@@ -1,4 +1,3 @@
-/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -80,7 +79,8 @@ public class Statistics extends javax.swing.JFrame {
         returnDetailsScPane = new JScrollPane();
         returnDetailsTable = new JTable();
         closeBtn = new JButton();
-
+        
+        
         issueDetailsLabel.setText("Issue Details");
 
         String[] columNames = {"Book ID", "Book Title", "Author Name", "Price", "Publishing Year"};
@@ -88,14 +88,20 @@ public class Statistics extends javax.swing.JFrame {
         Object[][] dataBase = DBConnection.booksDB;
         DefaultTableModel defTableModel = new DefaultTableModel(dataBase, columNames);
        // System.out.println(defTableModel);
+        
+        //here you need to put the data that it is stored inside your model. //nayeem
         issueDetailsTable.setModel(defTableModel);
         issueDetailsScPane.setViewportView(issueDetailsTable);
+        issueDetailsTable.setEnabled(false);   //nayeem
 
         returnDetailsLabel.setText("Return details");
-
+        
+        
+        //here where you should put the information //nayeem
         returnDetailsTable.setModel(new DefaultTableModel(new Object[][]{{null, null, null, null}, {null, null, null, null}, {null, null, null, null}, {null, null, null, null}}, columNames));
         returnDetailsScPane.setViewportView(returnDetailsTable);
-
+        returnDetailsTable.setEnabled(false); //nayeem
+        
         closeBtn.setText("Close");
         closeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent evt) {

@@ -1,4 +1,3 @@
-/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -135,6 +134,15 @@ public class ReturnBook extends javax.swing.JFrame {
         studentIDTextField.setText("");
         issueDateTextField.setText("");
         dueDateTextField.setText("");
+        
+        
+        
+        //here we have to access the return //nayeem
+        
+        //access the book stored in the xml.
+        //change its issued value to returned.
+        //update the database (XML file) that the book will be stored in the returned section of the XML.
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void closeBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

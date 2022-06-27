@@ -1,4 +1,3 @@
-/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -12,7 +11,6 @@ import java.awt.event.ActionListener;
  * @author nikhi
  */
 public class NewBook extends javax.swing.JFrame {
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public JButton saveBtn;
     public JButton closeBtn;
@@ -139,12 +137,21 @@ public class NewBook extends javax.swing.JFrame {
         DBConnection.setBook(bookIDTextField.getText(), bookTitleTextField.getText(), authorTextField.getText(), priceTextField.getText(), publishingYearTextField.getText());
         DBConnection.writeBookInDB();
 
-        bookIDTextField.setText("");
-        bookTitleTextField.setText("");
-        authorTextField.setText("");
-        priceTextField.setText("");
-        publishingYearTextField.setText("");
-        JOptionPane.showMessageDialog(null, "Succesfully new book added");
+        //bookIDTextField.setText("");
+        //bookTitleTextField.setText("");
+        //authorTextField.setText("");
+        //priceTextField.setText("");
+        //publishingYearTextField.setText("");
+        
+        //take this information and store it in your data base.
+        String a=bookIDTextField.getText();
+        String b=bookTitleTextField.getText();
+        String c=authorTextField.getText();
+        String d=priceTextField.getText();
+        String e=publishingYearTextField.getText();
+        
+        DBConnection.setBook(d, b, a, c, e); //nayeem
+        //Book.books.add(new Book(a,b,c,d,e,false));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void closeBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

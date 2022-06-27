@@ -12,10 +12,10 @@ public class DBConnection {
 
 
 	public static List<List<String>> booksDBList = new ArrayList<List<String>>();
-    public static String[][] booksDB;
+    public static String[][] booksDB = new String[100][100]; //nayeem
 
     protected static String path = Paths.get("src/main/resources/booksDB.csv").getParent() + "\\" + "booksDB.csv";
-
+    
 
     public static void readBooksDB() {
         String line = "";
@@ -53,8 +53,10 @@ public class DBConnection {
             for (int i = 0; i < booksDB.length; i++)
                 for (int j = 0; j < booksDB[i].length; j++)
                     copy[i][j] = booksDB[i][j];
-            for (int i = 0; i < booksDB[0].length; i++)
+            for (int i = 0; i < booksDB[0].length; i++) {
+            	System.out.print(booksDB[0].length);
                 copy[booksDB.length][i] = "null";
+            }
 
             copy[booksDB.length][0] = bookID;
             copy[booksDB.length][1] = bookTitle;
@@ -119,5 +121,3 @@ public class DBConnection {
     }
 
 }
-
-
