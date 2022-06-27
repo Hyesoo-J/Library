@@ -19,13 +19,18 @@ public class NewStudent extends javax.swing.JFrame {
     public JComboBox<String> facultyComboBox;
     public JComboBox<String> choicesComboBox;
     public JLabel studentIDLabel;
+    public JLabel studentPWLabel;
     public JLabel nameLabel;
     public JLabel familyNameLabel;
     public JLabel courseNameLabel;
     public JLabel branchNameLabel;
     public JTextField studentIDTextBox;
+    public JTextField studentPWTextBox;
     public JTextField nameTextBox;
     public JTextField familynameTextBox;
+    public String studentID;
+    public String studentPW;
+    
 
     /**
      * Creates new form NewStudent
@@ -50,7 +55,7 @@ public class NewStudent extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+    	} catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(NewStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(NewStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -79,11 +84,13 @@ public class NewStudent extends javax.swing.JFrame {
     public void initComponents() {
 
         studentIDLabel = new javax.swing.JLabel();
+        studentPWLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         familyNameLabel = new javax.swing.JLabel();
         courseNameLabel = new javax.swing.JLabel();
         branchNameLabel = new javax.swing.JLabel();
         studentIDTextBox = new javax.swing.JTextField();
+        studentPWTextBox = new javax.swing.JTextField();
         nameTextBox = new javax.swing.JTextField();
         familynameTextBox = new javax.swing.JTextField();
         facultyComboBox = new javax.swing.JComboBox<>();
@@ -93,6 +100,8 @@ public class NewStudent extends javax.swing.JFrame {
 
 
         studentIDLabel.setText("Student ID");
+        
+        studentPWLabel.setText("Student PW");
 
         nameLabel.setText("Name");
 
@@ -121,9 +130,33 @@ public class NewStudent extends javax.swing.JFrame {
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addContainerGap().addComponent(familyNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)).addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addGap(168, 168, 168).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(studentIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(branchNameLabel).addComponent(courseNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))).addGap(118, 118, 118).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false).addComponent(studentIDTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(nameTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(familynameTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(facultyComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE).addComponent(choicesComboBox, 0, 200, Short.MAX_VALUE))).addGroup(layout.createSequentialGroup().addGap(212, 212, 212).addComponent(saveBtn).addGap(135, 135, 135).addComponent(closeBtn))).addContainerGap(75, Short.MAX_VALUE)));
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(93, 93, 93).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(studentIDLabel).addComponent(studentIDTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(nameLabel).addComponent(nameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(familyNameLabel).addComponent(familynameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(courseNameLabel).addComponent(facultyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(branchNameLabel).addComponent(choicesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(40, 40, 40).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(saveBtn).addComponent(closeBtn)).addContainerGap(59, Short.MAX_VALUE)));
-
+        //layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addContainerGap().addComponent(familyNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)).addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addGap(168, 168, 168).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(studentIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(branchNameLabel).addComponent(courseNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))).addGap(118, 118, 118).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false).addComponent(studentIDTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(nameTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(familynameTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(facultyComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE).addComponent(choicesComboBox, 0, 200, Short.MAX_VALUE))).addGroup(layout.createSequentialGroup().addGap(212, 212, 212).addComponent(saveBtn).addGap(135, 135, 135).addComponent(closeBtn))).addContainerGap(75, Short.MAX_VALUE)));
+        //layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(93, 93, 93).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(studentIDLabel).addComponent(studentIDTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(nameLabel).addComponent(nameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(familyNameLabel).addComponent(familynameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(courseNameLabel).addComponent(facultyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(branchNameLabel).addComponent(choicesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(40, 40, 40).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(saveBtn).addComponent(closeBtn)).addContainerGap(59, Short.MAX_VALUE)));
+        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup().addContainerGap().addComponent(familyNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+        		.addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addGap(168, 168, 168)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        		.addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61,javax.swing.GroupLayout.PREFERRED_SIZE)
+        		.addComponent(studentIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+        		.addComponent(studentPWLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(branchNameLabel)
+        		.addComponent(courseNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        		.addGap(118, 118, 118)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false).addComponent(studentIDTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(studentIDTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(studentPWTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(nameTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(familynameTextBox, javax.swing.GroupLayout.Alignment.LEADING).addComponent(facultyComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE).addComponent(choicesComboBox, 0, 200, Short.MAX_VALUE))).addGroup(layout.createSequentialGroup().addGap(212, 212, 212).addComponent(saveBtn).addGap(135, 135, 135).addComponent(closeBtn))).addContainerGap(75, Short.MAX_VALUE)));
+        		                
+        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(93, 93, 93)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(studentIDLabel).addComponent(studentIDTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(studentPWLabel).addComponent(studentPWTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(nameLabel).addComponent(nameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(familyNameLabel).addComponent(familynameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(courseNameLabel).addComponent(facultyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(18, 18, 18)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(branchNameLabel).addComponent(choicesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addGap(40, 40, 40)
+        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(saveBtn).addComponent(closeBtn)).addContainerGap(59, Short.MAX_VALUE)));
         pack();
 
         this.setTitle("Create New Student");
@@ -133,8 +166,6 @@ public class NewStudent extends javax.swing.JFrame {
 
     }// </editor-fold>//GEN-END:initComponents
     
-    
-
     public void closeBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);        // TODO add your handling code here:
        
@@ -143,10 +174,11 @@ public class NewStudent extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void saveBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    	 DBConnectionStudent.setStudent(studentIDTextBox.getText(),  nameTextBox.getText(), familynameTextBox.getText(),  facultyComboBox.getSelectedItem().toString(), choicesComboBox.getSelectedItem().toString());
+    	 DBConnectionStudent.setStudent(studentIDTextBox.getText(), studentPWTextBox.getText(), nameTextBox.getText(), familynameTextBox.getText(),  facultyComboBox.getSelectedItem().toString(), choicesComboBox.getSelectedItem().toString());
          DBConnectionStudent. writeStudentsInDB();
 
          studentIDTextBox.setText("");
+         studentPWTextBox.setText("");
          nameTextBox.setText("");
          familynameTextBox.setText("");
          JOptionPane.showMessageDialog(null, "Succesfully added");
