@@ -46,7 +46,7 @@ public class DBConnection {
 
     public static void setBook(String bookID, String bookTitle, String author, String price, String publisher){
 
-
+    	//It appears to me that the error is emerging for this following function but I could not find out the reason or resolution to it. //nayeem
         if (getIndex(bookID) != -1){System.out.println("The book is already registered!");}
         else {
             var copy = new String[booksDB.length + 1][booksDB[0].length + 1];
@@ -54,7 +54,7 @@ public class DBConnection {
                 for (int j = 0; j < booksDB[i].length; j++)
                     copy[i][j] = booksDB[i][j];
             for (int i = 0; i < booksDB[0].length; i++) {
-            	System.out.print(booksDB[0].length);
+            	//System.out.print(booksDB[0].length);
                 copy[booksDB.length][i] = "null";
             }
 
