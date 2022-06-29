@@ -90,16 +90,13 @@ public class ReturnBook extends javax.swing.JFrame {
         closeBtn = new JButton();
 
         bookIDLabel.setText("Book ID");
-
         studentIDLabel.setText("Student id");
-
         issueDateLabel.setText("Issue date");
-
         dueDateLabel.setText("Due Date");
-
         searchBtn.setText("Search");
-
         returnBtn.setText("Return");
+          
+        
         returnBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 returnBtnActionPerformed(evt);
@@ -131,13 +128,18 @@ public class ReturnBook extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void returnBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        bookIDTextField .setText("");
-        studentIDTextField.setText("");
-        issueDateTextField.setText("");
-        dueDateTextField.setText("");
+        //bookIDTextField .setText("");
+        //studentIDTextField.setText("");
+        //issueDateTextField.setText("");
+        //dueDateTextField.setText("");
         
-        
-        
+        String a=bookIDTextField.getText();
+        String b=studentIDTextField.getText();
+        String c=issueDateTextField.getText();
+        String d=dueDateTextField.getText();
+
+        //DBConnection.setBook(d, b, a, c, b);
+       
         //here we have to access the return //nayeem
         
         //access the book stored in the xml.
