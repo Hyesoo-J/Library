@@ -132,11 +132,11 @@ public class ReturnBook extends javax.swing.JFrame {
         //studentIDTextField.setText("");
         //issueDateTextField.setText("");
         //dueDateTextField.setText("");
-        
-        String a=bookIDTextField.getText();
-        String b=studentIDTextField.getText();
-        String c=issueDateTextField.getText();
-        String d=dueDateTextField.getText();
+        									//nayeem
+        bookIDTextField.getText();
+        studentIDTextField.getText();
+        issueDateTextField.getText();
+        dueDateTextField.getText();
 
         //DBConnection.setBook(d, b, a, c, b);
        
