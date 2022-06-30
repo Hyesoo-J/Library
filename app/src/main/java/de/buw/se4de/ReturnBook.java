@@ -131,10 +131,18 @@ public class ReturnBook extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void returnBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    	
+    	bookIDTextField.getText();
+        studentIDTextField.getText();
+        issueDateTextField.getText();
+        dueDateTextField.getText(); 
+    	
         bookIDTextField .setText("");
         studentIDTextField.setText("");
         issueDateTextField.setText("");
         dueDateTextField.setText("");
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void closeBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

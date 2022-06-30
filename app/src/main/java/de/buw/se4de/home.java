@@ -19,7 +19,6 @@ public class home extends javax.swing.JFrame {
     public JButton statisticsBtn;
     public JButton issueBookBtn;
     public JButton returnBookBtnActionPerformed;
-    public JButton loginBtn;
     public JButton logoutBtn;
     
     public static boolean isActiveSession = true;
@@ -81,7 +80,6 @@ public class home extends javax.swing.JFrame {
         issueBookBtn = new javax.swing.JButton();
         returnBookBtnActionPerformed = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
-        loginBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,29 +124,11 @@ public class home extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
-        
-        loginBtn.setText("Login");
-        loginBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                loginBtnActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
-        //layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(31, 31, 31).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(newStudentBtn).addComponent(returnBookBtnActionPerformed)).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(85, 85, 85).addComponent(logoutBtn)).addGroup(layout.createSequentialGroup().addGap(67, 67, 67).addComponent(newBookBtn).addGap(70, 70, 70).addComponent(statisticsBtn).addGap(52, 52, 52).addComponent(issueBookBtn))).addContainerGap(311, Short.MAX_VALUE)));
-        //layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(24, 24, 24).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(newStudentBtn).addComponent(newBookBtn).addComponent(statisticsBtn).addComponent(issueBookBtn)).addGap(54, 54, 54).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(returnBookBtnActionPerformed).addComponent(logoutBtn)).addContainerGap(335, Short.MAX_VALUE)));
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup().addGap(31, 31, 31)
-        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(newStudentBtn).addComponent(returnBookBtnActionPerformed))
-        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup().addGap(82, 82, 82).addComponent(loginBtn).addGap(80, 80, 80).addComponent(logoutBtn))
-        		.addGroup(layout.createSequentialGroup().addGap(67, 67, 67).addComponent(newBookBtn).addGap(70, 70, 70).addComponent(statisticsBtn).addGap(52, 52, 52).addComponent(issueBookBtn))).addContainerGap(200, Short.MAX_VALUE)));
-        
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup().addGap(24, 24, 24)
-        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(newStudentBtn).addComponent(newBookBtn).addComponent(statisticsBtn).addComponent(issueBookBtn)).addGap(54, 54, 54)
-        		.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(returnBookBtnActionPerformed) .addComponent(loginBtn)).addComponent(logoutBtn)));
+        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(31, 31, 31).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(newStudentBtn).addComponent(returnBookBtnActionPerformed)).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(85, 85, 85).addComponent(logoutBtn)).addGroup(layout.createSequentialGroup().addGap(67, 67, 67).addComponent(newBookBtn).addGap(70, 70, 70).addComponent(statisticsBtn).addGap(52, 52, 52).addComponent(issueBookBtn))).addContainerGap(311, Short.MAX_VALUE)));
+        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(24, 24, 24).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(newStudentBtn).addComponent(newBookBtn).addComponent(statisticsBtn).addComponent(issueBookBtn)).addGap(54, 54, 54).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(returnBookBtnActionPerformed).addComponent(logoutBtn)).addContainerGap(335, Short.MAX_VALUE)));
 
         pack();
 
@@ -160,14 +140,6 @@ public class home extends javax.swing.JFrame {
 
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    public void loginBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        setVisible(false);
-        new login().setVisible(true);
-        isActiveSession = false;
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-    
     public void logoutBtnActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         setVisible(false);
         new login().setVisible(true);
